@@ -20,6 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link rel="stylesheet" href="css/fwslider.css" media="all">
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/fwslider.js"></script>
+<script src="js/quickslider.js"></script>
 <!--end slider -->
 <script type="text/javascript">
         $(document).ready(function() {
@@ -87,43 +88,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 </div>
 	    </div>
 	</div>
-	<div class="banner">
-	<!-- start slider -->
-       <div id="fwslider">
-         <div class="slider_container">
-            <div class="slide">
-                <!-- Slide image -->
-               <img src="images/slider1.jpg" class="img-responsive" alt=""/>
-                <!-- /Slide image -->
-                <!-- Texts container -->
-                <div class="slide_content">
-                    <div class="slide_content_wrap">
-                        <!-- Text title -->
-                        <h1 class="title">Run Over<br>Everything</h1>
-                        <!-- /Text title -->
-                        <div class="button"><a href="#">See Details</a></div>
-                    </div>
-                </div>
-               <!-- /Texts container -->
-            </div>
-            <!-- /Duplicate to create more slides -->
-            <div class="slide">
-               <img src="images/slider2.jpg" class="img-responsive" alt=""/>
-                <div class="slide_content">
-                    <div class="slide_content_wrap">
-                        <h1 class="title">Run Over<br>Everything</h1>
-                       	<div class="button"><a href="#">See Details</a></div>
-                    </div>
-                </div>
-            </div>
-            <!--/slide -->
-        </div>
-        <div class="timers"></div>
-        <div class="slidePrev"><span></span></div>
-        <div class="slideNext"><span></span></div>
-       </div>
-       <!--/slider -->
+<!-- gallery start -->
+<div id="quickslider">
+    <div class="quickslider">
+      <div id="1">
+        <img src="newImages/thrid.jpg" alt="placeholder image">
       </div>
+      <div id="2">
+        <img src="http://placehold.it/990x400/000000/ffffff&text=two" alt="placeholder image">
+      </div>
+      <div id="3">
+        <img src="http://placehold.it/990x400/636363/ffffff&text=three" alt="placeholder image">
+      </div>
+      <div id="4">
+        <img src="newImages/789A0570++.jpg" alt="placeholder image">
+      </div>
+    </div><!--quickslider-->
+
+    <div class="nav-thumbs">
+        <ul>
+            <li><a href="#" class="1" data-slide="1">1</a></li>
+            <li><a href="#" class="2" data-slide="2">2</a></li>
+            <li><a href="#" class="3" data-slide="3">3</a></li>
+            <li><a href="#" class="4" data-slide="4">4</a></li>
+        </ul>
+    </div>
+
+    <div class="quickslider-nav">
+        <!-- <a href="#" class="left">Prev</a>
+        <a href="#" class="right" onclick="next(); return false;">Next</a> -->
+    </div>
+</div><!--quickslider-->
+
+<!-- gallery end -->
 		<div class="footer">
 			<div class="container">
 				<div class="row">

@@ -2042,7 +2042,36 @@ h4.m_11 {
  }
 }
 
+/*new feature*/
 .logo-footer {
 	width: 100%;
 	height: 100%;
 }
+
+#quickslider{width:100%; margin:0 auto; position: relative;}
+.quickslider{position: relative; float: left; display: block; width: 990px; height:990px;}
+
+
+.nav-thumbs{position: absolute; clear:both; transform:rotate(90deg); bottom:50%; right:-45px;}
+.nav-thumbs ul{list-style-type: none;}
+.nav-thumbs ul li{float:left; margin-top:20px;}
+.nav-thumbs ul li a{
+    display:block;
+    width:10px;
+    height:10px;
+    float: left;
+    margin:0 5px;
+    background-color: #fff;
+    text-indent: -9999px;
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+.nav-thumbs ul li a:hover, .nav-thumbs ul li a.active{background-color: #a89d8a !important;}
+.active{background-color: #a89d8a !important;}
+
+.quickslider-nav{position:relative; clear:both; color:#000;}
+.quickslider-nav a{text-decoration: none;}
+.quickslider-nav .left{float: left; background-color: #fff; padding:5px 10px;}
+.quickslider-nav .right{float: right; background-color: #fff; padding:5px 10px;}
+.quickslider-nav .left:hover, .quickslider-nav .right:hover{background-color: #000; color:#fff;}
