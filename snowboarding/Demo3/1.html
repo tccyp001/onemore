@@ -1,0 +1,195 @@
+<html lang="en" ng-app="myApp">
+<head>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
+  <link rel="stylesheet" href="1.css">
+      <link href="css/bootstrap.css" rel="stylesheet">
+	      <link href="css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body ng-cloak>
+  <!--
+    Your HTML content here
+  -->
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    var app = angular.module('myApp', ['ngMaterial']);
+	app.controller('AppCtrl', function($scope, $mdSidenav) {
+		$scope.firstName = "John";
+		$scope.lastName = "Doe";
+		$scope.toggleRight = buildToggler('right');
+		function buildToggler(navID) {
+		  return function() {
+			$mdSidenav(navID)
+			  .toggle()
+			  .then(function () {
+				
+			  });
+		  }
+		}
+	});
+  </script>
+  <div ng-controller="AppCtrl as appCtrl" ng-cloak>
+  <section layout="row" flex>
+	<div layout="column" height='100px' flex>
+	  <div flex class= "header">
+
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                 <div class="header-left">
+                     <div class="logo">
+                        <a href="index.html">
+                            <img src="newImages\Logo\LOGO.png" alt="" class="header-logo"/>
+                        </a>
+                     </div>
+                     <div class="menu">
+                          <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+                            <ul class="nav" id="nav">
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="experiance.html">Events</a></li>
+                                <li><a href="experiance.html">Experiance</a></li>
+                                <li><a href="shop.html">Company</a></li>
+                                <li><a href="contact.html">Contact</a></li>                             
+                                <div class="clear"></div>
+                            </ul>
+                            <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>                          
+                    <div class="clear"></div>
+                </div>
+               
+          </div>
+ 
+        </div>
+    </div>
+	  </div>
+	  <div flex class= "content" layout="column">
+       
+		<div class='product1' layout="row">
+			<div flex=2>
+				<div layout="column" class="thumbnails-container">	
+
+					<div class="thumbnail-wrapper" >
+											<img src="newImages/erji2.png"  class="thumbnails"/>
+											<div > 
+												<img src="newImages/erji2.png"  class="big-pic-img"/>
+											</div>
+										</div>
+					<div class="thumbnail-wrapper" >
+						<img src="newImages/erji3.png"  class="thumbnails"/>
+						<div > 
+							<img src="newImages/erji3.png"  class="big-pic-img"/>
+						</div>
+					</div>
+					<div class="thumbnail-wrapper" >
+						<img src="newImages/erji4.png"  class="thumbnails"/>
+						<div > 
+							<img src="newImages/erji4.png"  class="big-pic-img"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div flex=9 class="product-container">
+				<img src='newImages/789A6692.jpg'/ class='product-img1'>
+				<div class= "buy-btn-section" layout="column" ng-click="toggleRight()">
+					<span flex>E0320 $100.00</span>
+					<button lex type="button" class="btn btn-danger buy-btn">BUY NOW</button>
+				</div>
+			</div>
+		</div>
+		<div class='product2'>			
+			<div class="about-section" id="about">
+				<div class="container">
+					<h3>about</h3>
+						<div class="about-grids">
+							<div class="col-md-6 about-grid">
+								<img src='newImages/789A6692.jpg' width="450" height="281" />
+							</div>
+							<div class="col-md-6 about-grid">
+								<h4>Latest Innovations</h4>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form orbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci ac sem. Dolor nunc vule putateulr ips dol consec.Donec semp ertet laciniate ultri cie upien disse comete dolo lectus fgilla itollicil tua ludin dolor nec met quam accumsan dolo. Dolore condime netus lullam utlacus adipiscing ipsum molestie. euismod lore estibu lum vel libero ipsum sit amet sollicitudin ante. Aenean imperdiet aliquet hendrerit.euismod lore estibu lum vel libero ipsum sit amet sollicitudin ante. Aenean imperdiet aliquet hendrerit.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class='product3'>
+			<div class="about-section" id="about">
+				<div class="container">
+					<h3>product 3</h3>
+						<div class="about-grids">
+							<div class="col-md-6 about-grid">
+								<img src='newImages/789A6692.jpg' width="450" height="281" />
+							</div>
+							<div class="col-md-6 about-grid">
+								<h4>Latest Innovations</h4>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form orbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci ac sem. Dolor nunc vule putateulr ips dol consec.Donec semp ertet laciniate ultri cie upien disse comete dolo lectus fgilla itollicil tua ludin dolor nec met quam accumsan dolo. Dolore condime netus lullam utlacus adipiscing ipsum molestie. euismod lore estibu lum vel libero ipsum sit amet sollicitudin ante. Aenean imperdiet aliquet hendrerit.euismod lore estibu lum vel libero ipsum sit amet sollicitudin ante. Aenean imperdiet aliquet hendrerit.</p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class='product4'>
+			ddd
+		</div>
+	   </div>
+	</div>
+	<div >
+		<md-sidenav class="md-sidenav-right md-whiteframe-z2 sidebar-right"
+		md-component-id="right" >
+			
+			<div style="height:350px">
+				<span class="back-btn"><Back</span>
+				
+			</div>
+			<div layout="column" style="margin-left:50px">
+				<span flex>E0320</span>
+				<br>
+		
+				<br>
+				<span  flex>Classical, metal design</span>
+				<md-divider ></md-divider>
+				<br>
+		
+				<br>
+				<ul>
+					<li>* abcd</li>
+					<li>* abcd</li>
+					<li>* abcd</li>
+					<li>* abcd</li>
+				</ul>
+	            <span flex>E0320 $100.00</span>
+						<br>
+				<br>
+		
+				<br>
+				<button lex type="button" class="btn btn-danger add-to-chart-btn">Add To Cart</button>
+			</div>
+			<div>
+				
+			</div>
+			
+			
+		
+		</md-sidenav>
+	</div>
+  </div>
+  
+</body>
+</html>

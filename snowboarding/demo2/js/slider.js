@@ -24,7 +24,7 @@ $(document).ready(function(){
 });
 
 function startSlider(){
-    count = $('.quickslider > img').size(); //variable to count all the list items or img
+    count = $('.quickslider > div').size(); //variable to count all the list items or img
     loop = setInterval(function(){
 
         if(sliderNext>count){
@@ -32,8 +32,8 @@ function startSlider(){
             sliderInt = 1; // set the Integer number back to 1 also
         }
 
-        $('.quickslider > img').fadeOut(300); // fadeout all images
-        $('.quickslider > img#'+sliderNext).fadeIn(300); // use sliderNext to calculate the next slider id
+        $('.quickslider > div').fadeOut(300); // fadeout all images
+        $('.quickslider > div#'+sliderNext).fadeIn(300); // use sliderNext to calculate the next slider id
         sliderInt = sliderNext; // update so that the current slide = 2 as set globally
         sliderNext = sliderNext + 1; // calculate the next image
 
@@ -68,8 +68,8 @@ function showSlide(id){ // id is the variable name of what we will be calling wh
             id = count; // if id = less than count of list then set back to 4 or whatever number of images
         }
 
-        $('.quickslider > img').fadeOut(300); // fadeout all images
-        $('.quickslider > img#'+id).fadeIn(300); // use sliderNext to calculate the next slider id
+        $('.quickslider > div').fadeOut(300); // fadeout all images
+        $('.quickslider > div#'+id).fadeIn(300); // use sliderNext to calculate the next slider id
     
         $('.nav-thumbs > a#'+id).addClass('active');
 
@@ -78,7 +78,7 @@ function showSlide(id){ // id is the variable name of what we will be calling wh
         startSlider(); // start the slider process again, as it was stopped before
 }
 
-$('.quickslider > img').hover(function(){
+$('.quickslider > div').hover(function(){
         stopLoop(); // stops the loop when image is hovered over
 },
 function(){
