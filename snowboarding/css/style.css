@@ -32,7 +32,7 @@ body a{
 }
 .menu{
 	 float:left;
-	 margin: 13px 0 0;
+	 margin: 6px 0 0;
 }
  .menu li{
 	display:inline-block;
@@ -136,8 +136,12 @@ body a{
  }
 .header_right{
 	float:right;
-	width:6%;
 	margin-top: 16px;
+	width: 200px
+}
+.footer_right{
+	float:right;
+	width: 400px
 }
 .sb-search {
 	position: absolute;
@@ -242,7 +246,7 @@ ul.icon1 {
 	zoom: 1;
 	list-style: none;
 	padding: 0;
-	margin-left:25%;
+	width: 100%;
 }
 .icon1 li {
 	float: left;
@@ -803,12 +807,17 @@ p.m_5{
 }
 /*--footer--*/
 .footer{
-	background:#000;
-	padding:0 5%;
+	background:#323232;
+	z-index:1;
+	bottom:0;
+	position:fixed;
+	height:60px;
+	width:100%;
+	opacity:0.8;
 }
-ul.footer_box{
+li.footer_box{
 	list-style:none;
-	padding:0;
+	margin:4px 20px
 }
 ul.footer_box h4{
 	color:#fff;
@@ -2070,11 +2079,6 @@ h4.m_11 {
 	width: 50%;
 	height: 50%;
 }
-
-#quickslider{width:100%; margin:0 auto; position: relative;}
-.quickslider{position: relative; float: left; display: block; width: 990px; height:990px;}
-
-
 .nav-thumbs{position: absolute; clear:both; transform:rotate(90deg); bottom:50%; right:-45px;}
 .nav-thumbs ul{list-style-type: none;}
 .nav-thumbs ul li{float:left; margin-top:20px;}
@@ -2092,9 +2096,6 @@ h4.m_11 {
 }
 .nav-thumbs ul li a:hover, .nav-thumbs ul li a.active{background-color: #a89d8a !important;}
 .active{background-color: #a89d8a !important;}
-
-.quickslider-nav{position:relative; clear:both; color:#000;}
-.quickslider-nav a{text-decoration: none;}
-.quickslider-nav .left{float: left; background-color: #fff; padding:5px 10px;}
-.quickslider-nav .right{float: right; background-color: #fff; padding:5px 10px;}
-.quickslider-nav .left:hover, .quickslider-nav .right:hover{background-color: #000; color:#fff;}
+.right-sidebar .slidePrev{
+	right:200px;
+}

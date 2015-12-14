@@ -18,7 +18,7 @@
   	position: absolute;
     top:50%;
     left:-50px;
-    z-index: 10;
+    z-index: 1;
 }
 #fwslider .slidePrev span {
 	background-image: url("../images/img-sprite.png");
@@ -33,7 +33,7 @@
    	position: absolute;
     top:50%;
     right:-50px;
-   	z-index: 10;
+   	z-index: 1;
 }
 #fwslider .slideNext span {
  	background-image: url("../images/img-sprite.png");
