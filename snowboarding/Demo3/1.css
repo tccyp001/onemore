@@ -84,3 +84,48 @@
 .css-clear {
 clear:both;
 }
+
+.cart {
+  background-color: #CCCCCC;
+}
+.title {
+  color: #969696;
+  text-align:center;
+  border-bottom:1px solid white;
+  padding-top: 5px;
+}
+.item-list {
+  height: 150px;
+}
+.item-pic {
+  float: left;
+  margin-left: 100px;
+  margin-top: 10px;
+  border:1px solid #969696;
+}
+.item-info {
+  float: left;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+.delete-btn {
+
+}
+.quantity-group {
+  float: left;
+  margin-left: 20%;
+  margin-top: 45px;
+}
+.quantity-ele {
+  float: left;
+  margin-left: 2px;
+}
+.divider {
+  float: left;
+  margin-left: 10%;
+  height: 100%;
+  border-right:1px solid white;
+}
+.summary {
+  
+}
