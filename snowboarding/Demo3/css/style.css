@@ -2043,11 +2043,11 @@ h4.m_11 {
 }
 
 .logo-footer {
-	width: 60%;
-	height: 60%;
+	width: 40%;
+	height: 40%;
 }
 .header-logo{
-	max-height:20px;
+	max-height:50px;
 }
     body {
         overflow: hidden;
@@ -2078,4 +2078,10 @@ footer {
     height: 160px;
     position: fixed;
     bottom: 0;
+}
+.product-block{
+	margin:20px;
+}
+.block-offset-120{
+	margin-left:120px;
 }
