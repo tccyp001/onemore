@@ -25,7 +25,7 @@ body a{
 .logo{
 	float:left;
 	margin-right: 2%;
-	margin-top: 13px;
+	margin-top: 6px;
 }
 .menu{
 	 float:left;
@@ -47,7 +47,7 @@ body a{
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-	font-weight: 600;
+	font-weight: normal;
  }
  .menu li a:hover ,.menu li.active a{
 	 background:#fff;
@@ -134,7 +134,7 @@ body a{
 .header_right{
 	float:right;
 	width:6%;
-	margin-top: 16px;
+	margin-top: 26px;
 }
 .sb-search {
 	position: absolute;
@@ -368,7 +368,7 @@ li.list_desc h4 a:hover{
 	height: 18px;
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 5px;
+	margin-right: 15px;
 }
 .icon1 .profile_img {
 	margin-top: 3px;
@@ -781,7 +781,7 @@ p.m_5{
 /*--footer--*/
 .footer{
 	background:#0C0C0B;
-	padding:20px 0;
+	padding:20px 5%;
 }
 ul.footer_box{
 	list-style:none;
@@ -789,10 +789,10 @@ ul.footer_box{
 }
 ul.footer_box h4{
 	color:#fff;
-	font-size:1.1em;
+	font-size:0.9em;
 	text-transform:uppercase;
-	font-weight:700;
-	margin-bottom: 8%;
+	font-weight:600;
+	margin-bottom: 8px;
 }
 ul.footer_box li a{
 	color: #B8B6B6;
@@ -1806,8 +1806,9 @@ fieldset.input input[type="submit"]:hover {
 .menu li a {
 	padding: 5px 10px;
  }
-.header_right {
+.headerright {
 	width: 7%;
+	margin-top: 6px
  }
 .icon1 ul {
 	width: 250px;
@@ -2043,8 +2044,8 @@ h4.m_11 {
 }
 
 .logo-footer {
-	width: 40%;
-	height: 40%;
+	width: 50%;
+	height: 50%;
 }
 .header-logo{
 	max-height:50px;

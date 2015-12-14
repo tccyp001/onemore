@@ -18,7 +18,7 @@
   	position: absolute;
     top:50%;
     left:-50px;
-    z-index: 10;
+    z-index: 1;
 }
 #fwslider .slidePrev span {
 	background-image: url("../images/img-sprite.png");
@@ -33,7 +33,7 @@
    	position: absolute;
     top:50%;
     right:-50px;
-   	z-index: 10;
+   	z-index: 1;
 }
 #fwslider .slideNext span {
  	background-image: url("../images/img-sprite.png");
@@ -72,19 +72,20 @@
     height:100%;
 }
 #fwslider .slide_content_wrap { /* Slider Text Content Container Style */
-    max-width: 600px;
-	margin: 12% auto;
+    width: 200px;
+	float: right;
+    margin: 200px 100px;
 }
 #fwslider .title {  /* Slider Title Style */
 	color: #FFF;
-	font-size: 5em;
+	font-size: 1.2em;
 	padding-top: 5%;
 	font-style: normal;
 	text-transform: uppercase;
 	border: none;
-	font-weight: 800;
+	font-weight: normal;
 	line-height: 1.3em;
-	margin-bottom: 5%;
+	margin-bottom: 20px;
 }
 /* ------------------------------- 4. Media Query Max Width 1300, Min Width 720 ------------------------------- */
 /* ------------------------------- 5. Media Query Max Width 719 ------------------------------- */
