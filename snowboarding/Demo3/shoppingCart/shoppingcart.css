@@ -57,6 +57,7 @@ h1, .sub-heading {
   width: 80%;
   max-width: 60rem;
   margin: 0 auto;
+  background-color:#E4E4EC;
 }
 /**
  * @extends: _grid;

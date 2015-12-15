@@ -6,7 +6,7 @@ var app= angular.module('myApp', [
   'ngMaterial',
   'ngCookies',
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/product1', {
     templateUrl: 'product1/product1.html',
     controller: 'Product1Ctrl'
@@ -22,6 +22,7 @@ config(['$routeProvider', function($routeProvider) {
 	controllerAs: 'shoppingCtrl'
   });
   $routeProvider.otherwise({redirectTo: '/product1'});
+  //$locationProvider.html5Mode(true);
 }]);
 app.factory('shoppingcartService', ['$window','$cookies', function(win, $cookies) {
 	var factory = {};
