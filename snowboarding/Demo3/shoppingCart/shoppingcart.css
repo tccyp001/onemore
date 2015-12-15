@@ -94,7 +94,7 @@ h1, .sub-heading {
 
 }
 .product-name {
-  font: 300 2.4em/1 "Lato", sans-serif;
+  font-size: 20px;
   letter-spacing: -.025em;
   margin: 0 0 .125em;
 }

@@ -1,42 +1,41 @@
 'use strict';
 
-app.controller('shoppingcartCtrl', function($scope, $cookies) {
-     $scope.shoppingCart = [];
-		
-	$scope.addChart = function(itemId){
-		$scope.shoppingCart = getShoppingCartFromCookie();
-		for(var i = 0;i<$scope.shoppingCart.length;i++){
-			if($scope.shoppingCart[i].id == itemId) {
-				$scope.shoppingCart[i].quantity +=1;
-			}
-		}
-		putShoppingCartToCookie();
-	}
+app.controller('shoppingcartCtrl', function($scope, $cookies, shoppingcartService) {
+     
+	this.shoppingcartService_ = shoppingcartService;
+	this.scope_ = $scope;
+	var varl = this.shoppingcartService_.multiply(2,3);
 	
-	var getShoppingCartFromCookie = function(){
-		var shoppingCartStr = $cookies.get('shoppingCart');
-		
-		var obj = {};
-		if(shoppingCartStr) {
-			obj = JSON.parse($cookies.get('shoppingCart'));
-		}			
-		return obj;
-	}
-	
-	var putShoppingCartToCookie = function() {
-		var serializeValue = JSON.stringify($scope.shoppingCart);
-	
-		$cookies.putObject('shoppingCart', $scope.shoppingCart)
-	}
-	
-	$scope.shoppingCart = getShoppingCartFromCookie();
-	if(!$scope.shoppingCart || $scope.shoppingCart.length==0){
-		$scope.shoppingCart.push({id: 'product1', name:'aaa', price:100, imgSrc : 'newImages/item.jpg', qty:2});
-		$scope.shoppingCart.push({id: 'product2', name:'bbb', price:200, imgSrc : 'newImages/item.jpg', qty:3});
+	var shoppingCart = this.shoppingcartService_.getShoppingCartFromCookie();
+	if(!shoppingCart || shoppingCart.length==0){
+		shoppingCart.push({id: 'product1', name:'aaa', price:100, imgSrc : 'newImages/item1.jpg', qty:2});
+		shoppingCart.push({id: 'product2', name:'bbb', price:200, imgSrc : 'newImages/item2.jpg', qty:3});
 	} 
-	putShoppingCartToCookie();
-	
-	$scope.getTotal = function(){
-		return 1000;
+	this.shoppingcartService_.shoppingCart = shoppingCart;
+	this.shoppingcartService_.putShoppingCartToCookie();
+	$scope.shoppingCart = this.shoppingcartService_.shoppingCart;
+	$scope.total = 100;
+	this.getTotal = function(){
+		var totalAmt = 0;
+		for(var i = 0;i<this.shoppingcartService_.shoppingCart.length;i++) {
+			var item = this.shoppingcartService_.shoppingCart[i];
+			totalAmt += item.qty * item.price;
+		}
+		return totalAmt;
+	};
+	this.test = function(){
+		return 'aaa';
+	}
+	this.plus = function(itemId) {
+		$scope.shoppingCart= this.shoppingcartService_.addCart(itemId);
+		
+	};
+	this.minus = function(itemId) {
+		$scope.shoppingCart= this.shoppingcartService_.removeOneFromCart(itemId);
+		
+	};
+	this.remove = function(itemId) {
+		$scope.shoppingCart= this.shoppingcartService_.removeAllFromCart(itemId);
+		
 	};
 });

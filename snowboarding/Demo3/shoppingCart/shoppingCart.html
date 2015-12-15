@@ -2,29 +2,30 @@
   
   <div >
   <h1>Shopping cart</h1>
-  <h2 class="sub-heading">Free shipping from $100!</h2>
+  <h2 class="sub-heading">Free shipping from $1500!</h2>
 
   <section class="shopping-cart">
     <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
 
-       <div class="item-list" ng-repeat="item in shoppingCart"  layout="row">
+       <div class="item-list" ng-repeat="item in shoppingCart"  layout="row" style="margin:15px;">
         <li class="_grid shopping-cart--list-item" style="min-width: 800px;">
           <div class="_column product-image">
             <img class="product-image--img" src="{{item.imgSrc}}" alt="Item image" 
-			style="max-width: 150px"/>
+			style="max-width: 120px;margin:15px;"/>
           </div>
           <div class="_column product-info">
-            <h4 class="product-name">{{item.name}}</h4>
-            <p class="product-desc">{{item.desc}}</p>
-            <div class="price product-single-price">${{item.price}}</div>
+            <h4 class="product-name">{{item.name}} ${{item.price}}</h4>
+            
+			
+         
           </div>
           <div class="_column product-modifiers">
             <div class="_grid">
-              <button class="_btn _column product-subtract">&minus;</button>
+              <button class="_btn _column product-subtract" ng-click="shoppingCtrl.minus(item.id)">&minus;</button>
               <div class="_column product-qty">{{item.qty}}</div>
-              <button class="_btn _column product-plus">&plus;</button>
+              <button class="_btn _column product-plus" ng-click="shoppingCtrl.plus(item.id)">&plus;</button>
             </div>
-            <button class="_btn entypo-trash product-remove">Remove</button>
+            <button class="_btn entypo-trash product-remove" ng-click="shoppingCtrl.remove(item.id)">Remove</button>
             <div class="price product-total-price">${{item.qty*item.price}}</div>
           </div>
         </li>
@@ -110,7 +111,14 @@
  </md-content>
  
   </form>
-  <button type="submit" form="payment-form" value="Submit">Submit</button>
+<div layout-gt-sm="row">
+
+    <label>Total Amount: {{shoppingCtrl.getTotal()}}</label>
+
+    <md-button class="md-raised md-primary" type="submit" form="payment-form" value="Submit">Submit Order</md-button>
+   
+		     
+    </div>
   </section>
 </div>
 		
