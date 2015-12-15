@@ -454,6 +454,8 @@ li.list_desc h4 a:hover{
 	background: #7f0000;
 }
 .buy-button{
+	padding: 0;
+	border: none;
 	text-align: left;
 }
 
@@ -1887,6 +1889,9 @@ section {
 	height: 800px;
 	font-size: left
 }
+.prod-img{
+	width: 100%;
+}
 .collection-img{
 	height: 500px;
 }
@@ -1916,14 +1921,14 @@ section {
 	float: right;
 	margin: 12%;
 }
-button.home-listen-button{
+a button.home-listen-button{
 	color: #fff;
 	font-weight: lighter;
 	padding: 6px 40px;
 	background: none;
 	border: 1px solid #fff;
 }
-button.home-listen-button:hover{
+a button.home-listen-button:hover{
 	background: #323232;
 	opacity: 0.8;
 }
