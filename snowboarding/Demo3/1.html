@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="shoppingcart/shoppingcart.css">
   <link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 </head>
@@ -24,7 +25,7 @@
 
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.js"></script>
-  
+
   <script src="app.js"></script>
   <script src="product1/product1.js"></script>
   <script src="product2/product2.js"></script>
@@ -33,11 +34,11 @@
   <script src="shoppingcart/shoppingcart.js"></script>
 
   <!-- Your application bootstrap  -->
-  <script type="text/javascript">    
+  <script type="text/javascript">
     /**
-     * You must include the dependency on 'ngMaterial' 
+     * You must include the dependency on 'ngMaterial'
      */
-	 
+
 	 /*
     var app = angular.module('myApp', ['ngMaterial', 'ngCookies']);
 	app.controller('AppCtrl', function($scope, $mdSidenav, $cookies) {
@@ -45,8 +46,8 @@
 		$scope.lastName = "Doe";
 		$scope.toggleRight = buildToggler('right');
 		$scope.shoppingCart = [];
-		
-		
+
+
 
 
 		$scope.addChart = function(itemId){
@@ -58,21 +59,21 @@
 			}
 			putShoppingCartToCookie();
 		}
-		
+
 		var getShoppingCartFromCookie = function(){
 			var shoppingCartStr = $cookies.get('shoppingCart');
-			
+
 			var obj = {};
 			if(shoppingCartStr) {
 				obj = JSON.parse($cookies.get('shoppingCart'));
-			}			
+			}
 			//var shoppingCart = JSON.parse($cookies.get('shoppingCart'));
 			return obj;
 		}
-		
+
 		var putShoppingCartToCookie = function() {
 			var serializeValue = JSON.stringify($scope.shoppingCart);
-		
+
 			$cookies.putObject('shoppingCart', $scope.shoppingCart)
 		}
 		function buildToggler(navID) {
@@ -80,7 +81,7 @@
 			$mdSidenav(navID)
 			  .toggle()
 			  .then(function () {
-				
+
 			  });
 		  }
 		}
@@ -88,12 +89,41 @@
 		if(!obj || obj.length==0){
 			$scope.shoppingCart.push({id: 'product1', name:'aaa', price:100, imgSrc : 'newImages/item.jpg', quantity:2});
 			$scope.shoppingCart.push({id: 'product2', name:'bbb', price:200, imgSrc : 'newImages/item.jpg', quantity:3});
-		} 
+		}
 		putShoppingCartToCookie();
 
 	});
 	*/
   </script>
+  <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_GDijmvo7Lo0vLn9NamxLwScQ');
+  </script>
+  <script>
+      jQuery(function($) {
+        $('#payment-form').submit(function(event) {
+          console.log("enter");
+          console.log("enter");
+          console.log("enter");
+          var $form = $(this);
+          $form.find('button').prop('disabled', true);
+          Stripe.card.createToken($form, stripeResponseHandler);
+          return false;
+        });
+      });
+      function stripeResponseHandler(status, response) {
+        var $form = $('#payment-form');
+        console.log(response);
+        if (response.error) {
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('button').prop('disabled', false);
+        } else {
+          var token = response.id;
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+          $form.get(0).submit();
+        }
+      };
+  </script>
+
   <div ng-controller="AppCtrl as appCtrl" ng-cloak>
   <section layout="row" flex>
 	<div layout="column" height='100px' flex>
@@ -124,18 +154,18 @@
               	<li><a class="active-icon c1" href="#"> </a></li>
               	<li><a class="sb-icon-search" href='#shoppingcart'> </a> </li>
 				   		</ul>
-				   	</div>                   
+				   	</div>
             <div class="clear"></div>
           </div>
         </div>
     	</div>
 	  </div>
-	  
+
 
 	  <div ng-view class='view-content'></div>
 
 
-	
+
 		<div class="footer">
             <div class="container">
                 <div class="row">
@@ -187,20 +217,20 @@
 	<div >
 		<md-sidenav class="md-sidenav-right md-whiteframe-z2 sidebar-right"
 		md-component-id="right" >
-			
+
 			<div style="height:350px">
 				<span class="back-btn"><Back</span>
-				
+
 			</div>
 			<div layout="column" style="margin-left:50px">
 				<span flex>E0320</span>
 				<br>
-		
+
 				<br>
 				<span  flex>Classical, luxurious metal design</span>
 				<md-divider ></md-divider>
 				<br>
-		
+
 				<br>
 				<ul>
 					<li>Powerful bass</li>
@@ -211,12 +241,12 @@
 	            <span flex>E0320 $100.00</span>
 						<br>
 				<br>
-		
+
 				<br>
 				<button lex type="button" class="btn btn-danger add-to-chart-btn">Add To Cart</button>
 			</div>
 			<div>
-				
+
 			</div>
 		</md-sidenav>
 	</div>
