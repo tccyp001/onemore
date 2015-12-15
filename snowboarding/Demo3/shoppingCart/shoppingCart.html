@@ -1,37 +1,113 @@
- <div class="cart" ng-hide='false'>
-      <div class="title">
-        <h4>Shopping Cart</h4>
-      </div>
-      <div class="item-list" ng-repeat="item in shoppingCart"  layout="row">
-        <img flex class="item-pic" id="item1" ng-src="{{item.imgSrc}}" width="100" height="115"/>
-        <div class="item-info" flex layout="row">
-          <div class="item-name" flex>
-            {{item.name}}
-          </div>
-          <div class="item-price" flex>
-            {{item.price}}
-          </div>
-          <div class="delete-btn" href="#" flex>
-            Delete
-          </div>
-        </div>
-        <div class="quantity-group" flex>
-          <div class="quantity-ele" href="#">
-            -
-          </div>
-          <input class="quantity-ele" type="text" placeholder="1" size="2" ng-model = 'item.quantity'/>
-          <div class="quantity-ele" href="#" >
-            +
-          </div>
-        </div>
-        <div class="divider" flex>
-        </div>
+ <div  ng-hide='false'>
+  
+  <div >
+  <h1>Shopping cart</h1>
+  <h2 class="sub-heading">Free shipping from $100!</h2>
 
+  <section class="shopping-cart">
+    <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
+
+       <div class="item-list" ng-repeat="item in shoppingCart"  layout="row">
+        <li class="_grid shopping-cart--list-item" style="min-width: 800px;">
+          <div class="_column product-image">
+            <img class="product-image--img" src="{{item.imgSrc}}" alt="Item image" 
+			style="max-width: 150px;/>
+          </div>
+          <div class="_column product-info">
+            <h4 class="product-name">{{item.name}}</h4>
+            <p class="product-desc">{{item.desc}}</p>
+            <div class="price product-single-price">${{item.price}}</div>
+          </div>
+          <div class="_column product-modifiers">
+            <div class="_grid">
+              <button class="_btn _column product-subtract">&minus;</button>
+              <div class="_column product-qty">{{item.qty}}</div>
+              <button class="_btn _column product-plus">&plus;</button>
+            </div>
+            <button class="_btn entypo-trash product-remove">Remove</button>
+            <div class="price product-total-price">${{item.qty*item.price}}</div>
+          </div>
+        </li>
       </div>
-	  <div class="summary" flex>
-          <div>TOTAL</div>
-          <div>199</div>
-          <button>Check Out Now</button>
+
+    </ol>
+
+  <h4 style="margin-top:30px;">Shipping Address</h4>
+  <form action="" method="POST" id="payment-form">
+  <md-content layout-padding style="margin-bottom:10px;">
+    <div >
+      <form name="userForm">
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First name</label>
+            <input ng-model="user.firstName"  data-stripe="firstName">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Last Name</label>
+            <input ng-model="user.lastName"  data-stripe="lastName">
+          </md-input-container>
         </div>
-  </div>
+        <md-input-container class="md-block">
+          <label>Address</label>
+          <input ng-model="user.address" data-stripe="address">
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <input ng-model="user.address2" placeholder="Address 2" data-stripe="address2">
+        </md-input-container>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>City</label>
+            <input ng-model="user.city" data-stripe="city">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>State</label>
+			 <input ng-model="user.state" data-stripe="state">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Postal Code</label>
+            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5" data-stripe="zipCode">
+            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a postal code.</div>
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                code.
+              </div>
+              <div ng-message="md-maxlength" class="my-message">
+                Don't use the long version silly...we don't need to be that specific...
+              </div>
+            </div>
+          </md-input-container>
+        </div>
+     
+      </form>
+    </div>
+  </md-content>
+    <h4 style="margin-top:30px;">Payment Info</h4>
+   <md-content layout-padding style="margin-bottom:10px;">
+
+    <div >
+	<span class="payment-errors"></span>
+
+         <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Credit Card Number</label>
+            <input ng-model="payment.creditCardNo" data-stripe="number">
+          </md-input-container>
+		     
+        </div>
+		 <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>EXP Date(MM/YYYY)</label>
+            <input ng-model="payment.expDate"  data-stripe="exp-month">
+          </md-input-container>
+		    <md-input-container class="md-block" flex-gt-sm>
+            <label>CVC Code</label>
+            <input ng-model="payment.cvcCode"  data-stripe="cvc">
+          </md-input-container>
+        </div>
+		
+	</div>
+ </md-content>
+  </section>
+</div>
 		
