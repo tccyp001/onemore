@@ -21,6 +21,7 @@ app.controller('shoppingcartCtrl', function($scope, $cookies, shoppingcartServic
 			var item = this.shoppingcartService_.shoppingCart[i];
 			totalAmt += item.qty * item.price;
 		}
+		this.scope_.totalAmt= totalAmt;
 		return totalAmt;
 	};
 	this.test = function(){

@@ -129,16 +129,21 @@
         </div>
 		 <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
-            <label>EXP Date(MM/YYYY)</label>
+            <label>EXP Month(MM)</label>
             <input data-stripe="exp-month">
           </md-input-container>
           <md-input-container class="md-block" flex-gt-sm>
-            <label>EXP Date(MM/YYYY)</label>
+            <label>EXP Year(YYYY)</label>
             <input data-stripe="exp-year">
           </md-input-container>
 		    <md-input-container class="md-block" flex-gt-sm>
             <label>CVC Code</label>
             <input ng-model="payment.cvcCode"  data-stripe="cvc">
+          </md-input-container>
+		  </md-input-container>
+		    <md-input-container class="md-block" flex-gt-sm ng-hide='true'>
+            <label>Total Amt</label>
+            <input ng-model="shoppingCtrl.getTotal()"  name="amount" >
           </md-input-container>
         </div>
 
@@ -156,7 +161,6 @@
 		     
     </div>
 
-  <button type="submit" form="payment-form" value="Submit">Submit</button>
 </form>
 
 <!-- <form action="http://173.227.36.66:3000/" method="POST" id="payment-form">

@@ -9,7 +9,8 @@ var app= angular.module('myApp', [
 config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/product1', {
     templateUrl: 'product1/product1.html',
-    controller: 'Product1Ctrl'
+    controller: 'Product1Ctrl',
+	controllerAs: 'prod1Ctrl'
   });
   $routeProvider.when('/product2', {
     templateUrl: 'product2/product2.html',
@@ -92,7 +93,7 @@ app.factory('shoppingcartService', ['$window','$cookies', function(win, $cookies
 	factory.getShoppingCartFromCookie = function(){
 		var shoppingCartStr = $cookies.get('shoppingCart');
 		
-		var obj = {};
+		var obj = [];
 		if(shoppingCartStr) {
 			obj = JSON.parse($cookies.get('shoppingCart'));
 		}			
