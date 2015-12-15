@@ -3,8 +3,10 @@
   <!-- Angular Material style sheet -->
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
   <link rel="stylesheet" href="1.css">
-      <link href="css/bootstrap.css" rel="stylesheet">
-	      <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="css/fwslider.css" media="all">
+  <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<script src="js/fwslider.js"></script>
 
 </head>
 <body ng-cloak>
@@ -91,38 +93,45 @@
   <div ng-controller="AppCtrl as appCtrl" ng-cloak>
   <section layout="row" flex>
 	<div layout="column" height='100px' flex>
-	  <div flex class= "header">
 
-        <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                 <div class="header-left">
-                     <div class="logo">
-                        <a href="index.html">
-                            <img src="newImages\Logo\LOGO.png" alt="" class="header-logo"/>
-                        </a>
-                     </div>
-                     <div class="menu">
-                            <ul class="nav" id="nav">
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="team.html">Team</a></li>
-                                <li><a href="experiance.html">Events</a></li>
-                                <li><a href="experiance.html">Experiance</a></li>
-                                <li><a href="shop.html">Company</a></li>
-                                <li><a href="contact.html">Contact</a></li>                             
-                                <div class="clear"></div>
-                            </ul>
-                    </div>                          
-                    <div class="clear"></div>
-                </div>
-               
+		<div flex class= "header">
+			<div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header-left">
+              <div class="logo">
+                <a href="index.html">
+                  <img src="newImages\Logo\LOGO.png" alt="" class="header-logo"/>
+                </a>
+              </div>
+             	<div class="menu">
+						    <ul class="nav" id="nav">
+						    	<li><a href="shop.html">HOME</a></li>
+						    	<li><a href="team.html">PRODUCT</a></li>
+						    	<li><a href="experiance.html">PRESS</a></li>
+						    	<li><a href="experiance.html">SUPPORT</a></li>
+						    	<li><a href="shop.html">BLOG FORUM</a></li>
+								<div class="clear"></div>
+							</ul>
+							<script type="text/javascript" src="js/responsive-nav.js"></script>
+             </div>
+            </div>
+            <div class="header_right">
+				    	<ul class="icon1 sub-icon1 profile_img">
+              	<li><a class="active-icon c1" href="#"> </a></li>
+              	<li><a class="sb-icon-search"> </a> </li>
+				   		</ul>
+				   	</div>                   
+            <div class="clear"></div>
           </div>
- 
         </div>
-    </div>
+    	</div>
 	  </div>
 	  
+
 	  <div ng-view class='view-content'></div>
+
+
 	
 		<div class="footer">
             <div class="container">
