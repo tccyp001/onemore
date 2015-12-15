@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="shoppingcart/shoppingcart.css">
   <link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
 </head>
@@ -91,9 +92,14 @@
 	});
 	*/
   </script>
+  <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_GDijmvo7Lo0vLn9NamxLwScQ');
+  </script>
   <script>
       jQuery(function($) {
         $('#payment-form').submit(function(event) {
+          console.log("enter");
+          console.log("enter");
           console.log("enter");
           var $form = $(this);
           $form.find('button').prop('disabled', true);
