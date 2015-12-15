@@ -25,6 +25,10 @@
 <script src="js/fwslider.js"></script>
 <script src="js/quickslider.js"></script>
 <base href="/">
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_GDijmvo7Lo0vLn9NamxLwScQ');
+  </script>
 </head>
 <body ng-cloak>
   <!--
@@ -44,6 +48,7 @@
 
   <script src="app.js"></script>
   <script src="product1/product1.js"></script>
+
   <script src="product2/product2.js"></script>
   <script src="product3/product3.js"></script>
   <script src="product4/product4.js"></script>
@@ -115,7 +120,11 @@
           $form.get(0).submit();
         }
       };
-  </script>
+</script>
+    <script src="shoppingcart/shoppingcart.js"></script>
+
+  <!-- Your application bootstrap  -->
+
 
   <div ng-controller="AppCtrl as appCtrl" ng-cloak>
  <div class="header">
