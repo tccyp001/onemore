@@ -11,10 +11,10 @@
 	background-color:green;
 	font-size:14px;
 }
-.content
+.view-content
 {
-	min-height:calc(100% - 70px);
-	max-height:calc(100% - 70px);
+	min-height:calc(100% - 200px);
+	max-height:calc(100% - 200px);
 	width:100%;
 	overflow:auto;
 	background-color:#E4E4EC;

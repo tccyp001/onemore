@@ -1,0 +1,37 @@
+ <div class="cart" ng-hide='false'>
+      <div class="title">
+        <h4>Shopping Cart</h4>
+      </div>
+      <div class="item-list" ng-repeat="item in shoppingCart"  layout="row">
+        <img flex class="item-pic" id="item1" ng-src="{{item.imgSrc}}" width="100" height="115"/>
+        <div class="item-info" flex layout="row">
+          <div class="item-name" flex>
+            {{item.name}}
+          </div>
+          <div class="item-price" flex>
+            {{item.price}}
+          </div>
+          <div class="delete-btn" href="#" flex>
+            Delete
+          </div>
+        </div>
+        <div class="quantity-group" flex>
+          <div class="quantity-ele" href="#">
+            -
+          </div>
+          <input class="quantity-ele" type="text" placeholder="1" size="2" ng-model = 'item.quantity'/>
+          <div class="quantity-ele" href="#" >
+            +
+          </div>
+        </div>
+        <div class="divider" flex>
+        </div>
+
+      </div>
+	  <div class="summary" flex>
+          <div>TOTAL</div>
+          <div>199</div>
+          <button>Check Out Now</button>
+        </div>
+  </div>
+		

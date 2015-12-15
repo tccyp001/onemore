@@ -15,6 +15,7 @@
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
@@ -22,11 +23,16 @@
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.js"></script>
   
+  <script src="app.js"></script>
+  <script src="product1/product1.js"></script>
+
   <!-- Your application bootstrap  -->
   <script type="text/javascript">    
     /**
      * You must include the dependency on 'ngMaterial' 
      */
+	 
+	 /*
     var app = angular.module('myApp', ['ngMaterial', 'ngCookies']);
 	app.controller('AppCtrl', function($scope, $mdSidenav, $cookies) {
 		$scope.firstName = "John";
@@ -80,6 +86,7 @@
 		putShoppingCartToCookie();
 
 	});
+	*/
   </script>
   <div ng-controller="AppCtrl as appCtrl" ng-cloak>
   <section layout="row" flex>
@@ -96,7 +103,6 @@
                         </a>
                      </div>
                      <div class="menu">
-                          <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                             <ul class="nav" id="nav">
                                 <li><a href="shop.html">Shop</a></li>
                                 <li><a href="team.html">Team</a></li>
@@ -106,7 +112,6 @@
                                 <li><a href="contact.html">Contact</a></li>                             
                                 <div class="clear"></div>
                             </ul>
-                            <script type="text/javascript" src="js/responsive-nav.js"></script>
                     </div>                          
                     <div class="clear"></div>
                 </div>
@@ -116,133 +121,9 @@
         </div>
     </div>
 	  </div>
-	  <div flex class= "content" layout="column">
-       
-		<div class='product1 product-block' layout="row">
-			<div flex=2>
-				<div layout="column" class="thumbnails-container">	
-
-					<div class="thumbnail-wrapper" >
-											<img src="newImages/erji2.png"  class="thumbnails"/>
-											<div > 
-												<img src="newImages/erji2.png"  class="big-pic-img"/>
-											</div>
-										</div>
-					<div class="thumbnail-wrapper" >
-						<img src="newImages/erji3.png"  class="thumbnails"/>
-						<div > 
-							<img src="newImages/erji3.png"  class="big-pic-img"/>
-						</div>
-					</div>
-					<div class="thumbnail-wrapper" >
-						<img src="newImages/erji4.png"  class="thumbnails"/>
-						<div > 
-							<img src="newImages/erji4.png"  class="big-pic-img"/>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div flex=9 class="product-container">
-				<img src='newImages/789A6692.jpg'/ class='product-img1'>
-				<div class= "buy-btn-section" layout="column" ng-click="toggleRight()">
-					<span flex>E0320 $100.00</span>
-					<button lex type="button" class="btn btn-danger buy-btn" ng-click='addChart("product1")'>BUY NOW</button>
-				</div>
-			</div>
-		</div>
-		<div class='product2 product-block'>			
-			<div class="about-section" id="about">
-				<div class="container">
-			
-						<div class="about-grids  block-offset-120">
-							<div class="col-md-6 about-grid">
-								<h4>Latest Innovations</h4>
-								<ul>
-									<li>Full frequency range and high fidelity performances.</li>
-									<li>Smart in-line control compatible with iOS and Android.</li>
-									<li>Metal Composite Diaphragm.</li>
-									<li>Egornomically designed earbuds.</li>
-									<li>Patented structure design with balanced armature and dynamic drivers</li>
-
-								</ul>
-							</div>
-							<div class="col-md-6 about-grid">
-								<img src='newImages/EO320_7.png' width="450" height="281" />
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-				</div>
-			</div>
-		</div>
+	  
+	  <div ng-view class='view-content'></div>
 	
-		<div class='product3 product-block'>
-			<div class="about-section" id="about">
-				<div class="container ">
-		
-						<div class="about-grids block-offset-120">
-							<div class="col-md-6 about-grid">
-								<img src='newImages/EO320_8.jpg' width="450" height="281" />
-							</div>
-							<div class="col-md-6 about-grid">
-								<h4>Product Specifications</h4>
-								<table>
-								<tr><td>Type</td><td>In-Ear</td></tr>
-								<tr><td>Remote&mic</td><td>Yes</td></tr>
-								<tr><td>Color</td><td>Gold</td></tr>
-								<tr><td>Weight</td><td>15g</td></tr>
-								<tr><td>Frequency Response</td><td>20-20,000Hz</td></tr>
-								<tr><td>Sensitivity</td><td>98dB</td></tr>
-								<tr><td>Plug Type</td><td>3.5mm gold plated</td></tr>
-								<tr><td>Speaker impedance:</td><td>32Ω</td></tr>
-								</table>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-				</div>
-			</div>
-		</div>
-		<div class='product4'>
-			ddd
-		</div>
-	 <div class="cart" ng-hide='true'>
-      <div class="title">
-        <h4>Shopping Cart</h4>
-      </div>
-      <div class="item-list" ng-repeat="item in shoppingCart"  layout="row">
-        <img flex class="item-pic" id="item1" src="{{item.imgSrc}}" width="100" height="115"/>
-        <div class="item-info" flex layout="row">
-          <div class="item-name" flex>
-            {{item.name}}
-          </div>
-          <div class="item-price" flex>
-            {{item.price}}
-          </div>
-          <div class="delete-btn" href="#" flex>
-            Delete
-          </div>
-        </div>
-        <div class="quantity-group" flex>
-          <div class="quantity-ele" href="#">
-            -
-          </div>
-          <input class="quantity-ele" type="text" placeholder="1" size="2" ng-model = 'item.quantity'/>
-          <div class="quantity-ele" href="#" >
-            +
-          </div>
-        </div>
-        <div class="divider" flex>
-        </div>
-
-      </div>
-	  <div class="summary" flex>
-          <div>TOTAL</div>
-          <div>199</div>
-          <button>Check Out Now</button>
-        </div>
-
-  </div>
-		
 		<div class="footer">
             <div class="container">
                 <div class="row">
@@ -290,7 +171,7 @@
             </div>
         </div>
 	   </div>
-	</div>
+
 	<div >
 		<md-sidenav class="md-sidenav-right md-whiteframe-z2 sidebar-right"
 		md-component-id="right" >
@@ -325,9 +206,6 @@
 			<div>
 				
 			</div>
-			
-			
-		
 		</md-sidenav>
 	</div>
   </div>
