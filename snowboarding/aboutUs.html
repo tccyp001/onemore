@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Product</title>
+<title>1More-About Us</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -60,8 +60,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      </script>
 </head>
 <body>
-	<div class="header">
-		<div class="row">
+	<div class="header" style="position:relative; background:#000;">
+		<div class="row" style="background:#000;">
 			  <div class="col-md-12">
 				  <div class="header-left">
 					   <div class="logo">
@@ -76,18 +76,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
              </ul>
 	    		   <div class="clear"></div>
 	    	  </div>
-	        <div class="header_right" style="margin:5px; width:12%;">
-				    <button class="buy-button">
-              <a href="#">BUY NOW</a>
-            </button>
-	         </div>
+	        <div class="header_right">
+          <div class="col-md-2">
+            <ul class="icon1 sub-icon1 profile_img">
+              <li><a class="active-icon c1" href="#"> </a></li>
+           </ul>
+               <div class="clear"></div>
+         </div>
+        </div>
 	      </div>
 	 </div>
 	</div>
 	<div class="banner">
-    <div class="col-md-12 video">
-      <img class="prod-img" src="images/E0301/slide.jpg"/>
-      <img class="prod-img-mobile" src="images/E0301/slide-mobile.jpg"/>
+    <div class="col-md-12 text-content">
+      <div class="text-section">
+        <h1 class="title">ABOUT US</h1>
+        <hr class="section-separator" align="center">
+        <p> 1MORE Inc., was established in 2013 and is headquartered in Shenzhen China, with origins focusing on acoustic design and development, smart software and wearable products. 1MORE is what we do. We always take one more step to provide the highest quality and performance. 1MORE devotes itself to delivering products with cutting edge designs and unbeatable prices.</p>
+        <p> 1MORE is cultivating long term strategic partnerships with vital suppliers. Through joint component research and development, our bond is strengthened. Incorporating fine materials and sophisticated technology, while pursuing the highest quality standards, 1MORE is blending exhilarating fashion with comfort, resulting in a robust product experience.</p>
+        <p>Official Website:
+          <a href="https://www.1more.com">https://www.1more.com</a></p>
+        <hr class="section-separator" align="center">
+      </div>
+      <div class="text-section">
+        <h1 class="section-title">About 1More</h1>
+        <h2 class="section-subtitle">Fashionably designed with acoustics at heart</h2>
+        <p> At 1MORE, our mission is to use the latest technology to create premium quality audio devices at prices everyone can afford, look stylish wearing, and feel good about purchasing. This has been our mission ever since we came out with our first product, the Mi piston headphones, and we have been adhering to these principles ever since. We use environmentally-friendly production processes, premium craftsmanship, fashionable design, and non-toxic materials in every product we build.</p>
+        <hr class="section-separator" align="center">
+      </div>
+      <div class="text-section">
+        <h1 class="section-title">TECHNOLOGY</h1>
+        <h2 class="section-subtitle">Aerospace-grade metal composite diaphragm</h2>
+        <p>The patented triple layer diaphragm design allows a listener to hear music as the musician original intended. The result is clean treble, immaculate mid-range, and powerful bass.</p>
+        <h2 class="section-subtitle">Innovation</h2>
+        <P>1MORE holds a number of patents for its headphone innovations. These include: scratch and slip resistant CD-surface like textured stripes on metal surfaces of the headphones; a dual balanced damping system, and a triple-layer composite diaphragm. 1MORE also originated the intelligent control box, which is compatible with iOS and Android.</P>
+        <h2 class="section-subtitle">Tuned by a Grammy Award winning mixer</h2>
+        <P>Luca Bignardi</P>
+        <hr class="section-separator" align="center">
+      </div>
+      <div class="text-section">
+        <h1 class="section-title">AWARDS</h1>
+        <h2 class="section-subtitle">1MORE is honored to have received a number of prestigious design awards, including:</h2>
+        <p>iF Design Award, 2014, 2015</p>
+        <p>reddot Award, 2015</p>
+        <P>COMPUTEX Innovation Design Award</P>
+        <hr class="section-separator" align="center">
+      </div>
+      <div class="text-section">
+        <h1 class="section-title">PRODUCTS</h1>
+        <h2 class="section-subtitle">1MORE In-Ear Piston Headphones (1M301)</h2>
+        <p>iDual metallic resonant chambers provide dynamic sound</p>
+        <ul>
+          <li>Space Gray and Classic Red</LI>
+        </ul>
+        <h2 class="section-subtitle">1MORE Crystal Piston In-Ear Headphones (EO301)</h2>
+        <p>Embellished with Crystals from Swarovski®</p>
+        <ul>
+          <li>Pink</li>
+          <LI>Black</LI>
+        </ul>
+        <h2 class="section-subtitle">1MORE Dual-Driver In-Ear Headphones (EO323)</h2>
+        <p>Patented structure design for dynamic and balanced armature drivers</p>
+        <ul>
+          <li>Gold and White</li>
+        </ul>
+        <h2 class="section-subtitle">1MORE Over-Ear Headphones (MK801)</h2>
+        <p>Constructed with strong, flexible and lightweight TR-90 steel</p>
+        <ul>
+          <li>Red</li>
+          <LI>Black</LI>
+        </ul>
+      </div>
+      </p>
     </div>
   </div>
 	 
@@ -138,67 +198,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
             </div>
         </div>
-  <script type="text/javascript">
-   $(document).ready(function(){
-    $('.awesome-tooltip').tooltip({
-        placement: 'left'
-    });   
-
-    $(window).bind('scroll',function(e){
-      dotnavigation();
-    });
-    
-    function dotnavigation(){
-             
-        var numSections = $('section').length;
-        
-        $('#dot-nav li a').removeClass('active').parent('li').removeClass('active');     
-        $('section').each(function(i,item){
-          var ele = $(item), nextTop;
-          
-          console.log(ele.next().html());
-          
-          if (typeof ele.next().offset() != "undefined") {
-            nextTop = ele.next().offset().top;
-          }
-          else {
-            nextTop = $(document).height();
-          }
-          
-          if (ele.offset() !== null) {
-            thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numSections);
-          }
-          else {
-            thisTop = 0;
-          }
-          
-          var docTop = $(document).scrollTop();
-          
-          if(docTop >= thisTop && (docTop < nextTop)){
-            $('#dot-nav li').eq(i).addClass('active');
-          }
-        });   
-    }
-
-    /* get clicks working */
-    $('#dot-nav li').click(function(){
-      
-        var id = $(this).find('a').attr("href"),
-          posi,
-          ele,
-          padding = 0;
-      
-        ele = $(id);
-        posi = ($(ele).offset()||0).top - padding;
-      
-        $('html, body').animate({scrollTop:posi}, 'slow');
-      
-        return false;
-    });
-
-/* end dot nav */
-});
-
-  </script>
 </body>
 </html>
